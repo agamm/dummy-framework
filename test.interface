@@ -1,0 +1,35 @@
+
+defaults:
+	render: ssr
+
+clinet:
+	/:
+		IndexComponent
+	/blog:
+		Nextjs/Gatsby entrypoint.
+	/app:
+		AppRootComponent
+		// if import LogoutHandler in component, connet via this config - Zero-API
+
+server:
+	/app:
+		/app/login: LoginHandler
+		/app/logout: LogoutHandler
+		/users: UsersHandler,
+	
+middleware:
+	- csrf
+	- sanboxed
+	- webp
+
+deploy:
+	- aws
+
+---------------
+
+
+export default LogoutHandler = (req, res) => {
+	e = Session.logout()
+	if (e) res.Err(e) // err and Ok are json responses by default so they are scham based, easy to check.
+	res.Ok()
+}
