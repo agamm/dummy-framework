@@ -1,0 +1,58 @@
+
+## Configuration
+- Version Changes Don't Impact
+- Version control easily
+- Easy to connect parts
+
+config -> compile 
+config -> deploy
+
+## Mono
+Use React and Javascript with TypeScript support.
+No Magic.
+Connect frontend to backend.
+
+
+framework:
+  version: 1.0.2
+
+frontend:
+  /: IndexComponent
+  /login: LoginComponent
+  /logout: Redirect("/")
+  /register: RegisterComponent
+  /view/{id}: ViewComponent
+  /create: CreateComponent
+  /blog/{postId}: 
+    - Static
+    - DataDir("./blog") 
+
+backend:
+  /login: LoginHandler
+  /logout: LogoutHandler
+  /register: RegisterHandler
+  /view/{id}: ViewHandler
+  /create: CreateHandler
+  /log: LogHandler
+
+database:
+  - type: SQLite
+  - Migrations:
+      Users: UsersMigration
+	  Posts
+
+middleware:
+  - images: webp, compress
+
+deploy:
+  - provider: DigitalOcean
+
+===============
+
+In ViewComponent:
+import ViewHandler from Framework.Config
+import call from Framework
+
+const ViewComponent = (id) => {
+	viewData = await call(ViewHandler, {id: id})
+}
