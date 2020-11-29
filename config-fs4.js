@@ -35,7 +35,10 @@ frontend({
 })
 
 build({
-	images: [webp]
+	images: [webp],
+	plugins: [
+		TailwindCSS2
+	]
 })
 
 deploy({
