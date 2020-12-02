@@ -76,4 +76,9 @@ Deployment({
 	}
 })
 
+CheckFrontend({
+	repo: "https://github.com/u/frontend",
+	version: "1.0.0"
+})
+
 export default useConfig()
