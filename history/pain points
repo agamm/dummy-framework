@@ -1,0 +1,53 @@
+pain points
+
+
+TS by default
+
+1. configureable
+ 	versionable
+ 	pre-defined plugins/ customizeable plugins - i.e. Auth/ Payment/ Analytics/ HotJar - Tools
+	definition
+		configure everything in one place (develop/ deploy/ test/ install)
+
+
+2. abstractions
+	everthing is replaceable (modules)
+	decoupled (immutables components)
+
+
+3. server-client
+	structure (schema, functions i/o)
+	connctivity (routes/ route table/ uris)
+
+
+4. jamStack features
+	could be provided by the handlers
+		SSR
+		instant nevigation (performace optimization)
+
+
+5. compile & linter
+	based on configuration & schema
+	like rust does to source-code, but for your app
+
+6. Batteries Included yet Flexible
+
+6. logging/ monitoring (server-client monitoring)
+	structured - automatic
+	tracing - distributed -> context
+	live debugging tool (based on traced errors)
+
+
+7. components & e2e tests
+	based on the schema
+	everthing is tested by default (should be)
+
+
+8. cloud agnostic (deployment)
+	using handlers (local/ modules)
+	secured by default? option
+
+
+9. cli-tool
+	scaffolding
+	programmable commands

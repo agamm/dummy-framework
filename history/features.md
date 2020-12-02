@@ -20,3 +20,6 @@ Things I want by order:
 - Automatic routing
 - Fast build times
 	- https://www.snowpack.dev/ 
+
+
+deployable completely to the Edge—CDNs and serverless functions
